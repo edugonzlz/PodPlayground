@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7EFB6E60087168C1915A0ECD /* Pods_PodPlayground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 087BD4D6468CDAFD289C3857 /* Pods_PodPlayground.framework */; };
 		F87ADB2428D5D885007368A9 /* PodPlaygroundApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87ADB2328D5D885007368A9 /* PodPlaygroundApp.swift */; };
 		F87ADB2628D5D885007368A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F87ADB2528D5D885007368A9 /* ContentView.swift */; };
 		F87ADB2828D5D887007368A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F87ADB2728D5D887007368A9 /* Assets.xcassets */; };
@@ -14,6 +15,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		087BD4D6468CDAFD289C3857 /* Pods_PodPlayground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PodPlayground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		109F2E511F44084A98AE2D3A /* Pods-PodPlayground.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodPlayground.release.xcconfig"; path = "Target Support Files/Pods-PodPlayground/Pods-PodPlayground.release.xcconfig"; sourceTree = "<group>"; };
+		7E127E57FCC2CDA632491C9E /* Pods-PodPlayground.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PodPlayground.debug.xcconfig"; path = "Target Support Files/Pods-PodPlayground/Pods-PodPlayground.debug.xcconfig"; sourceTree = "<group>"; };
 		F87ADB2028D5D885007368A9 /* PodPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F87ADB2328D5D885007368A9 /* PodPlaygroundApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodPlaygroundApp.swift; sourceTree = "<group>"; };
 		F87ADB2528D5D885007368A9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -26,17 +30,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EFB6E60087168C1915A0ECD /* Pods_PodPlayground.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1EFBC1FE3AA1C92F9C8BC234 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				087BD4D6468CDAFD289C3857 /* Pods_PodPlayground.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		90050961EBD806BB1783201A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7E127E57FCC2CDA632491C9E /* Pods-PodPlayground.debug.xcconfig */,
+				109F2E511F44084A98AE2D3A /* Pods-PodPlayground.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F87ADB1728D5D885007368A9 = {
 			isa = PBXGroup;
 			children = (
 				F87ADB2228D5D885007368A9 /* PodPlayground */,
 				F87ADB2128D5D885007368A9 /* Products */,
+				90050961EBD806BB1783201A /* Pods */,
+				1EFBC1FE3AA1C92F9C8BC234 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F87ADB2E28D5D887007368A9 /* Build configuration list for PBXNativeTarget "PodPlayground" */;
 			buildPhases = (
+				35A4A331773AF009F683B0BD /* [CP] Check Pods Manifest.lock */,
 				F87ADB1C28D5D885007368A9 /* Sources */,
 				F87ADB1D28D5D885007368A9 /* Frameworks */,
 				F87ADB1E28D5D885007368A9 /* Resources */,
+				E767CA37B62207A1E75BB738 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		35A4A331773AF009F683B0BD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PodPlayground-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E767CA37B62207A1E75BB738 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PodPlayground/Pods-PodPlayground-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PodPlayground/Pods-PodPlayground-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PodPlayground/Pods-PodPlayground-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F87ADB1C28D5D885007368A9 /* Sources */ = {
@@ -261,6 +330,7 @@
 		};
 		F87ADB2F28D5D887007368A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E127E57FCC2CDA632491C9E /* Pods-PodPlayground.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -290,6 +360,7 @@
 		};
 		F87ADB3028D5D887007368A9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 109F2E511F44084A98AE2D3A /* Pods-PodPlayground.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
