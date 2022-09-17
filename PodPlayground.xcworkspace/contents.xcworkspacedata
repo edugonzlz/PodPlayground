@@ -2,13 +2,13 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Playground.playground">
+      location = "group:Playgrounds/Playground.playground">
    </FileRef>
    <FileRef
-      location = "group:SwiftUIPlayground.playground">
+      location = "group:Playgrounds/SwiftUIPlayground.playground">
    </FileRef>
    <FileRef
-      location = "group:/Users/eduardo.gonzalez/Desktop/PodPlayground/UIKitPlayground.playground">
+      location = "group:Playgrounds/UIKitPlayground.playground">
    </FileRef>
    <FileRef
       location = "group:PodPlayground.xcodeproj">
